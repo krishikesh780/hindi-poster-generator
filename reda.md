@@ -26,6 +26,8 @@ pip install streamlit pillow
 ## ✅ 3. (Optional) requirements.txt बनाओ
 
 **requirements.txt** फ़ाइल में लिखो:
+pip freeze > requirements.txt
+
 
 ```
 streamlit>=1.30.0
