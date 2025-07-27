@@ -1,12 +1,8 @@
 import cv2
 import os
 
-# Dynamic input/output folder paths from user
-input_folder = input("📂 Enter input folder path (images folder): ").strip()
-output_folder = input("💾 Enter output folder path (where images will be saved): ").strip()
-
-# Create output folder if it doesn't exist
-os.makedirs(output_folder, exist_ok=True)
+# 🔥 Hardcoded Input/Output Folder (Overwrite in same folder)
+input_folder = r"D:\YoutubePoster\input\wallpapers-father"  # Change this path
 
 # Process images
 image_count = 0
@@ -16,16 +12,20 @@ for filename in os.listdir(input_folder):
         image_path = os.path.join(input_folder, filename)
         image = cv2.imread(image_path)
 
-        # Crop last 5% to remove watermark
+        if image is None:
+            print(f"⚠️ Skipped (unable to read): {filename}")
+            continue
+
+        # Crop last 5% (remove watermark)
         height, width = image.shape[:2]
         crop_height = int(height * 0.95)
         cropped_image = image[0:crop_height, 0:width]
 
-        # Save cropped image
-        output_path = os.path.join(output_folder, filename)
+        # Save cropped image (overwrite)
+        output_path = os.path.join(input_folder, filename)
         cv2.imwrite(output_path, cropped_image)
 
         image_count += 1
         print(f"✅ Processed: {filename}")
 
-print(f"\n🎉 Done! {image_count} images processed. Watermark removed and saved to '{output_folder}'.")
+print(f"\n🎉 Done! {image_count} images processed. Watermark removed and saved in '{input_folder}'.")

@@ -1,7 +1,7 @@
 import os
 
 # Folder path
-folder_path = r'D:\YoutubePoster\input\wallpapers'
+folder_path = r'D:\YoutubePoster\input\wallpapers-gym'
 
 # Change working directory
 os.chdir(folder_path)
