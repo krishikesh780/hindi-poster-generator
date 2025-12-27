@@ -1,0 +1,21 @@
+{
+    
+    "template_1": 
+    {
+        "font": "Hind-Regular", 
+    "font_size": 47, 
+    "text_color": "#ffffff",
+     "text_bg_color": null, 
+     "bg_transparent": true, 
+     "show_answer": false, 
+     "watermark_text": "Created by FutureWay Tech",
+      "watermark_font_size": 40, 
+      "watermark_color": "#CCCCCC",
+       "watermark_rotation": 45,
+        "watermark_opacity": 15, 
+        "platform": "PPT ", 
+        "question_mode": "Sequential", 
+        "output_format": "JPEG"
+    }
+
+}
