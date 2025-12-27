@@ -2,7 +2,8 @@ import cv2
 import os
 
 # 🔥 Hardcoded Input/Output Folder (Overwrite in same folder)
-input_folder = r"D:\YoutubePoster\input\wallpapers-father"  # Change this path
+# input_folder = r"D:\YoutubePoster\input\Poster-Wallpaper\technology"  # Change this path
+input_folder = r"D:\YoutubePoster\input\wallpapers\futureway\compress" # Output folder for compressed images
 
 # Process images
 image_count = 0
@@ -18,7 +19,7 @@ for filename in os.listdir(input_folder):
 
         # Crop last 5% (remove watermark)
         height, width = image.shape[:2]
-        crop_height = int(height * 0.95)
+        crop_height = int(height * 0.9)  # Crop last 10% of height
         cropped_image = image[0:crop_height, 0:width]
 
         # Save cropped image (overwrite)

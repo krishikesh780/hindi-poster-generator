@@ -2,7 +2,9 @@ import os
 from PIL import Image, ImageSequence
 
 # 🔥 Hardcoded Input Folder
-input_folder = r"D:\YoutubePoster\input\wallpapers-father"  # Change this path
+# input_folder = r"D:\YoutubePoster\input\wallpapers-father"  # Change this path
+
+input_folder = r"D:\YoutubePoster\input\wallpapers\abcd"  # Change this path
 
 # Process GIFs
 gif_count = 0
@@ -17,7 +19,7 @@ for filename in os.listdir(input_folder):
             frame = frame.convert("RGBA")
 
             width, height = frame.size
-            crop_height = int(height * 0.95)
+            crop_height = int(height * 0.7)  # Crop 10% from the bottom
             cropped_frame = frame.crop((0, 0, width, crop_height))
 
             frames.append(cropped_frame)
